@@ -4,6 +4,8 @@ namespace App;
 
 abstract class Config
 {
+
+    const BASE_URL = "/php_library_mvc_sample/public/";
     const SHOW_ERRORS = true;
 
     const DB_HOST = "127.0.0.1";

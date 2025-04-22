@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 /**
  * It requires all class files instead of loading them one by one.
  */
@@ -29,6 +31,17 @@ $router->add("", [
 $router->add("books", [
     "controller" => "Books",
     "action" => "index"
+]);
+
+$router->add("books/new", [
+    'controller' => 'Books',
+    'action' => 'new'
+]);
+
+$router->add('books/create', [
+    'controller' => 'Books',
+    'action' => 'create',
+    'method' => 'POST'
 ]);
 
 /* 
