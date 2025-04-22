@@ -1,14 +1,20 @@
 <?php include dirname(__DIR__) . '/Layout/header.php'; ?>
 <?php include dirname(__DIR__) . '/Layout/nav.php'; ?>
-    <main>
-        <h3>Books in KEA's Library</h3>
-    </main>
+<main>
+    <section>
+        <header>
+            <h2>Book list</h2>
+        </header>
+    </section>
+    <?php foreach ($books as $book): ?>
+    <article class="card">
+        <header>
+            <h3><?= htmlspecialchars($book['title']) ?></h3>
+            <h4><?= htmlspecialchars($book['author_first_name'] . ' ' . $book['author_last_name']) ?></h4>
+        </header>
+        <p><?= htmlspecialchars($book['publisher'] . ', ' . $book['publishing_year']) ?></p>
+    </article>
+    <?php endforeach; ?>
+</main>
 
-    <ul>
-        <?php foreach($books as $book): ?>
-            <p><?= $book ?></p>
-        <?php endforeach; ?>
-    </ul>
-
-    
 <?php include dirname(__DIR__) . '/Layout/footer.php'; ?>
